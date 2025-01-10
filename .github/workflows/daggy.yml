@@ -1,6 +1,16 @@
 name: daggy
 on: [push, pull_request]
 jobs:
+  audit:
+    name: Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/audit@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
   rustfmt-check:
     runs-on: ubuntu-latest
     steps:
