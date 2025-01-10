@@ -1,7 +1,5 @@
-extern crate daggy;
-
-use daggy::NodeIndex;
-use daggy::{Dag, WouldCycle};
+use daggy2::NodeIndex;
+use daggy2::{Dag, WouldCycle};
 use std::iter::once;
 
 struct Weight;

@@ -1,5 +1,7 @@
-# daggy [![Actions Status](https://github.com/mitchmindtree/daggy/workflows/daggy/badge.svg)](https://github.com/mitchmindtree/daggy/actions) [![Crates.io](https://img.shields.io/crates/v/daggy.svg)](https://crates.io/crates/daggy) [![Crates.io](https://img.shields.io/crates/l/daggy.svg)](https://github.com/mitchmindtree/daggy/blob/master/LICENSE-MIT) [![docs.rs](https://docs.rs/daggy/badge.svg)](https://docs.rs/daggy/)
+# daggy2 [![Actions Status](https://github.com/azriel91/daggy2/workflows/daggy2/badge.svg)](https://github.com/azriel91/daggy2/actions) [![Crates.io](https://img.shields.io/crates/v/daggy.svg)](https://crates.io/crates/daggy) [![Crates.io](https://img.shields.io/crates/l/daggy.svg)](https://github.com/azriel91/daggy2/blob/master/LICENSE-MIT) [![docs.rs](https://docs.rs/daggy2/badge.svg)](https://docs.rs/daggy2/)
 
+> [!NOTE]
+> This is a fork of [`daggy`](https://github.com/mitchmindtree/daggy), with updated dependencies. This fork can be abandoned when `daggy` is able to be maintained.
 
 A [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) data structure for Rust.
 
@@ -9,13 +11,13 @@ It is Implemented on top of [petgraph](https://github.com/petgraph/petgraph)'s [
 Usage
 -----
 
-Please see the [tests directory](https://github.com/mitchmindtree/daggy/tree/master/tests) for some basic usage examples.
+Please see the [tests directory](https://github.com/azriel91/daggy2/tree/master/tests) for some basic usage examples.
 
 Use daggy in your project by adding it to your Cargo.toml dependencies like so:
 
 ```toml
 [dependencies]
-daggy = "*"
+daggy2 = "0.8.1"
 ```
 
 

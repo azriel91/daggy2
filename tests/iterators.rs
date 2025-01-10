@@ -1,6 +1,4 @@
-extern crate daggy;
-
-use daggy::{Dag, Walker};
+use daggy2::{Dag, Walker};
 
 struct Weight;
 

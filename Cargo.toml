@@ -1,17 +1,17 @@
 [package]
-name = "daggy"
-version = "0.8.0"
-authors = ["mitchmindtree <mitchell.nordine@gmail.com>"]
+name = "daggy2"
+version = "0.8.1"
+authors = ["mitchmindtree <mitchell.nordine@gmail.com>", "Azriel Hoh <azriel91@gmail.com>"]
 description = "A directed acyclic graph data structure library. It is Implemented on top of petgraph's Graph data structure and attempts to follow similar conventions where suitable."
 readme = "README.md"
 keywords = ["dag", "directed", "acyclic", "graph", "data-structure"]
 license = "MIT/Apache-2.0"
-repository = "https://github.com/mitchmindtree/daggy.git"
-homepage = "https://github.com/mitchmindtree/daggy"
+repository = "https://github.com/azriel91/daggy2.git"
+homepage = "https://github.com/azriel91/daggy2"
 edition = "2018"
 
 [dependencies]
-petgraph = { version = "0.6", default-features = false }
+petgraph = { version = "0.7", default-features = false }
 serde = { version = "1.0", optional = true }
 
 [features]

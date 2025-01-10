@@ -1,7 +1,6 @@
 #![cfg(feature = "stable_dag")]
-extern crate daggy;
 
-use daggy::stable_dag::{StableDag, Walker};
+use daggy2::stable_dag::{StableDag, Walker};
 
 struct Weight;
 
