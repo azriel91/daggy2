@@ -1,12 +1,11 @@
 #![feature(test)]
 
-extern crate daggy;
 extern crate test;
 
 use test::Bencher;
 
-use daggy::Dag;
-use daggy::NodeIndex;
+use daggy2::Dag;
+use daggy2::NodeIndex;
 struct Weight;
 
 #[bench]

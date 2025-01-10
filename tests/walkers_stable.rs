@@ -1,7 +1,6 @@
 #![cfg(feature = "stable_dag")]
-extern crate daggy;
 
-use daggy::stable_dag::{StableDag, Walker};
+use daggy2::stable_dag::{StableDag, Walker};
 
 #[derive(Copy, Clone, Debug)]
 struct Weight;
@@ -95,7 +94,7 @@ fn chain() {
     let (_, e) = dag.add_child(c, Weight, Weight);
     let (_, f) = dag.add_child(c, Weight, Weight);
 
-    let mut chain = daggy::walker::Chain::new(dag.children(c), dag.children(a));
+    let mut chain = daggy2::walker::Chain::new(dag.children(c), dag.children(a));
     assert_eq!(Some(f), chain.walk_next(&dag).map(|(_, n)| n));
     assert_eq!(Some(e), chain.walk_next(&dag).map(|(_, n)| n));
     assert_eq!(Some(d), chain.walk_next(&dag).map(|(_, n)| n));
@@ -116,7 +115,7 @@ fn filter() {
     dag.add_child(parent, (), 5);
 
     let children = dag.children(parent);
-    let mut even_children = daggy::walker::Filter::new(children, |g, &(_, n)| g[n] % 2 == 0);
+    let mut even_children = daggy2::walker::Filter::new(children, |g, &(_, n)| g[n] % 2 == 0);
     assert_eq!(
         4,
         dag[even_children.walk_next(&dag).map(|(_, n)| n).unwrap()]
@@ -141,7 +140,7 @@ fn peekable() {
     let (_, c) = dag.add_child(parent, Weight, Weight);
 
     let children = dag.children(parent);
-    let mut children = daggy::walker::Peekable::new(children);
+    let mut children = daggy2::walker::Peekable::new(children);
     assert_eq!(Some(c), children.peek(&dag).map(|&(_, n)| n));
     assert_eq!(Some(c), children.walk_next(&dag).map(|(_, n)| n));
     assert_eq!(Some(b), children.walk_next(&dag).map(|(_, n)| n));
@@ -164,7 +163,7 @@ fn skip_while() {
     dag.add_child(parent, (), 5);
 
     let children = dag.children(parent);
-    let mut children_under_3 = daggy::walker::SkipWhile::new(children, |g, &(_, n)| g[n] >= 3);
+    let mut children_under_3 = daggy2::walker::SkipWhile::new(children, |g, &(_, n)| g[n] >= 3);
     assert_eq!(
         2,
         dag[children_under_3.walk_next(&dag).map(|(_, n)| n).unwrap()]
@@ -192,7 +191,7 @@ fn take_while() {
     dag.add_child(parent, (), 5);
 
     let children = dag.children(parent);
-    let mut children_over_2 = daggy::walker::TakeWhile::new(children, |g, &(_, n)| g[n] > 2);
+    let mut children_over_2 = daggy2::walker::TakeWhile::new(children, |g, &(_, n)| g[n] > 2);
     assert_eq!(
         5,
         dag[children_over_2.walk_next(&dag).map(|(_, n)| n).unwrap()]
@@ -220,7 +219,7 @@ fn skip() {
     dag.add_child(parent, (), 5);
 
     let children = dag.children(parent);
-    let mut children = daggy::walker::Skip::new(children, 3);
+    let mut children = daggy2::walker::Skip::new(children, 3);
     assert_eq!(2, dag[children.walk_next(&dag).map(|(_, n)| n).unwrap()]);
     assert_eq!(1, dag[children.walk_next(&dag).map(|(_, n)| n).unwrap()]);
     assert_eq!(0, dag[children.walk_next(&dag).map(|(_, n)| n).unwrap()]);
@@ -239,7 +238,7 @@ fn take() {
     dag.add_child(parent, (), 5);
 
     let children = dag.children(parent);
-    let mut children = daggy::walker::Take::new(children, 3);
+    let mut children = daggy2::walker::Take::new(children, 3);
     assert_eq!(5, dag[children.walk_next(&dag).map(|(_, n)| n).unwrap()]);
     assert_eq!(4, dag[children.walk_next(&dag).map(|(_, n)| n).unwrap()]);
     assert_eq!(3, dag[children.walk_next(&dag).map(|(_, n)| n).unwrap()]);

@@ -1,8 +1,7 @@
 #![cfg(feature = "stable_dag")]
-extern crate daggy;
 
-use daggy::stable_dag::{NodeIndex, StableDag};
-use daggy::WouldCycle;
+use daggy2::stable_dag::{NodeIndex, StableDag};
+use daggy2::WouldCycle;
 use std::iter::once;
 
 struct Weight;
