@@ -1,4 +1,4 @@
-# daggy2 [![Actions Status](https://github.com/azriel91/daggy2/workflows/daggy2/badge.svg)](https://github.com/azriel91/daggy2/actions) [![Crates.io](https://img.shields.io/crates/v/daggy.svg)](https://crates.io/crates/daggy) [![Crates.io](https://img.shields.io/crates/l/daggy.svg)](https://github.com/azriel91/daggy2/blob/master/LICENSE-MIT) [![docs.rs](https://docs.rs/daggy2/badge.svg)](https://docs.rs/daggy2/)
+# daggy2 [![Actions Status](https://github.com/azriel91/daggy2/workflows/daggy2/badge.svg)](https://github.com/azriel91/daggy2/actions) [![Crates.io](https://img.shields.io/crates/v/daggy2.svg)](https://crates.io/crates/daggy2) [![Crates.io](https://img.shields.io/crates/l/daggy2.svg)](https://github.com/azriel91/daggy2/blob/master/LICENSE-MIT) [![docs.rs](https://docs.rs/daggy2/badge.svg)](https://docs.rs/daggy2/)
 
 > [!NOTE]
 > This is a fork of [`daggy`](https://github.com/mitchmindtree/daggy), with updated dependencies. This fork can be abandoned when `daggy` is able to be maintained.
